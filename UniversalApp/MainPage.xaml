@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="UniversalApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UniversalApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        
+        <Button Content="Cleaning" Background="LightBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10"  Click="CleanButtonClick" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="Maintainance" Background="LightCyan" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,10"  Click="MaintainButtonClick" Grid.Column="1" Grid.Row="2"/>
+        <Button Content="Room Service" Background="LightCoral" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="10,10,10,10" Click="ServiceButtonClick" Grid.Column="1" Grid.Row="3"/>
+
+    </Grid>
+
+
+</Page>
