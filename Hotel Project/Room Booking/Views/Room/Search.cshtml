@@ -1,0 +1,78 @@
+﻿@model Room_Booking.Models.Room
+@*@{
+        ViewData["Title"] = "Movie List";
+    }
+
+    <h2>My Movie List</h2>
+
+    <p>Hello from our View Template!</p>*@
+
+
+
+
+
+@*@<form asp-controller="Room" asp-action="Search">
+        <p>
+            Title: <input type="text" name="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>*@
+
+
+<form method="post" asp-action="Search">
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Search for room</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="NumberOfBeds"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="RoomSize"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="RoomQuality"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input asp-for="NumberOfBeds" class="form-control" />
+                        <span asp-validation-for="NumberOfBeds" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="RoomSize" class="form-control" />
+                        <span asp-validation-for="RoomSize" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="RoomQuality" class="form-control" />
+                        <span asp-validation-for="RoomQuality" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-75" value="search" />
+                        </div>
+                        <div class="col">
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-danger w-75">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@*@<p>
+        <input type="search" placeholder="Enter Details..." value="@ViewData["GetAvailableRooms"]" name="nOfBeds" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primart" />
+        <a asp-action="Index">Get All Rooms</a>
+    </p>*@
+
+
+
+</form>
