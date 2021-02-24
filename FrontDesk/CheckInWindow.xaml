@@ -1,0 +1,108 @@
+﻿<Window x:Class="FrontDesk.CheckInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontDesk"
+        mc:Ignorable="d"
+        Title="CheckInWindow" Height="450" Width="800"
+        WindowStyle="None">
+    <Grid Name="CheckIn" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#25274D" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Check out" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            <Button Content="X" Name ="CloseBtn" Grid.Column ="3" Margin="0,0,10,0" Click="CloseBtn_Click" Background="#2E9CCA" BorderBrush="White" Height="20" VerticalAlignment="Center" HorizontalAlignment="Right" Width="20">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#DCC1BE">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#25274D" HorizontalAlignment="Left" Width="800" Height="420" VerticalAlignment="Center">
+            <Label Content="Customer Name:" Foreground="White" FontWeight="DemiBold" Margin="62,105,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="105"/>
+            <TextBox Name="CustomerName" Margin="191,105,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" />
+            <Label Content="Room Number:" Foreground="White" FontWeight="DemiBold" Margin="62,180,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="104"/>
+            <TextBox Name="RoomNum" Margin="191,180,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" />
+
+            <Button Name="CheckInBtn" Content="Check In" Foreground="White" Margin="74,250,0,0" HorizontalAlignment="Left" Width="80" Height="30" VerticalAlignment="Top" Click="CheckInBtn_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Background" Value="#2E9CCA"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="80" Height="30" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Name="CancelBtn" Content="Cancel" Foreground="White" Margin="224,250,0,0" HorizontalAlignment="Left" Width="80" Height="30" VerticalAlignment="Top" Click="Button_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Background" Value="#2E9CCA"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="80" Height="30" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" Background="LightPink">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="120*"/>
+                <ColumnDefinition Width="115*"/>
+                <ColumnDefinition Width="115*"/>
+            </Grid.ColumnDefinitions>
+            <ListView Name ="reservationsList" ItemsSource="{Binding}" Grid.Column="0" Grid.ColumnSpan="4" Background="#AAABB8" MouseDoubleClick="reservationsList_MouseDoubleClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Room#" Width="50" DisplayMemberBinding="{Binding Path=CustomerUsername}"/>
+                        <GridViewColumn Header="Customer" Width="120"/>
+                        <GridViewColumn Header="Check In" Width="115"/>
+                        <GridViewColumn Header="Check Out" Width="115"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+    </Grid>
+</Window>
