@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,9 +26,18 @@ namespace Room_Booking
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // DATABASE
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
-            ); // DATABASE
+            );
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //services.AddIdentity<Room_Booking.ViewModels.LoginViewModel, IdentityRole>(options =>
+            //{
+            //    options.User.RequireUniqueEmail = false;
+            //}).AddEntityFrameworkStores<ServiceProviderServiceExtensions.Database.EFProvider.DataContext>().AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
         }
@@ -50,6 +60,7 @@ namespace Room_Booking
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

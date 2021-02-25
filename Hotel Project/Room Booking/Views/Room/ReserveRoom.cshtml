@@ -1,0 +1,11 @@
+﻿@model Room_Booking.Models.Room
+
+@{
+    ViewData["Title"] = "Search for available rooms";
+}
+
+
+<form asp-action="ReserveRoom">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="ReserveRoom" class="btn btn-danger" /> |
+</form>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\Hotel Project\\Room Booking\\Room Booking.csproj": {}
+    "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\154-Assignment4\\Hotel Project\\Room Booking\\Room Booking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\Hotel Project\\Room Booking\\Room Booking.csproj": {
+    "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\154-Assignment4\\Hotel Project\\Room Booking\\Room Booking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\Hotel Project\\Room Booking\\Room Booking.csproj",
+        "projectUniqueName": "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\154-Assignment4\\Hotel Project\\Room Booking\\Room Booking.csproj",
         "projectName": "Room Booking",
-        "projectPath": "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\Hotel Project\\Room Booking\\Room Booking.csproj",
+        "projectPath": "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\154-Assignment4\\Hotel Project\\Room Booking\\Room Booking.csproj",
         "packagesPath": "C:\\Users\\Joakim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\Hotel Project\\Room Booking\\obj\\",
+        "outputPath": "C:\\Users\\Joakim\\Desktop\\DAT154\\OBLIGER\\Assignment 4 - Hotel Project\\154-Assignment4\\Hotel Project\\Room Booking\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -44,6 +44,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[5.0.3, )"
